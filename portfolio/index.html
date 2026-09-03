@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="work.css">
 </head>
 
-<body>
+
 
    <body>
 
@@ -85,7 +85,7 @@
         <picture class="character-layer character-plain">
             <source
                 media="(max-width: 700px)"
-                srcset="images/phone-view.png"
+                srcset="phone-view.png"
             >
 
             <img
@@ -104,7 +104,7 @@
         >
             <source
                 media="(max-width: 700px)"
-                srcset="images/phone-mask.png"
+                srcset="phone-mask.png"
             >
 
             <img
@@ -116,18 +116,28 @@
 
     </div>
 
+            <!-- MASK INTERACTION HINT -->
 
-    <!-- Small interaction hint -->
-    <div class="reveal-hint" id="revealHint">
+<div class="reveal-hint" id="revealHint">
+
+    <span class="hint-orb" aria-hidden="true">
+        <span></span>
+    </span>
+
+    <span class="hint-copy">
+
         <span class="desktop-hint">
-            MOVE TO REVEAL
+            <strong>MOVE TO REVEAL</strong>
+            
         </span>
 
         <span class="touch-hint">
-            TOUCH TO REVEAL
+            <strong>TOUCH TO REVEAL</strong>
         </span>
-    </div>
 
+    </span>
+
+</div>
 </div>
 <!-- DEVELOPER stays IN FRONT of character -->
 <div class="developer-word" aria-hidden="true">

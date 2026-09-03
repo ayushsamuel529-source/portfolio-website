@@ -135,14 +135,40 @@ if (characterStack && maskedCharacter) {
     /* =====================================
        HINT
     ===================================== */
+/* =====================================
+   HINT
+===================================== */
 
-    function hideHint() {
+let hasInteracted = false;
 
-        revealHint?.classList.add("hide");
 
+function showHint() {
+
+    if (!revealHint) {
+        return;
     }
 
+    revealHint.classList.remove("hide");
+    revealHint.classList.add("show");
 
+}
+
+
+function hideHint() {
+    /*
+       Intentional:
+       cursor/touch interaction par
+       hint hide nahi hoga.
+
+       Hint automatically 30 sec
+       ke baad hide hoga.
+    */
+}
+
+
+/* =====================================
+   POINT → CHARACTER POSITION
+===================================== */
     /* =====================================
        POINT → CHARACTER POSITION
     ===================================== */
@@ -181,14 +207,11 @@ if (characterStack && maskedCharacter) {
                 rect.height) *
             100;
 
-
         targetRadius = getRadius();
 
-        hideHint();
+        hasInteracted = true;
 
         startAnimation();
-
-        return true;
     }
 
 
@@ -466,7 +489,98 @@ if (characterStack && maskedCharacter) {
         "--spot-size",
         "0px"
     );
+    /* =====================================
+   FIRST-VISIT REVEAL DEMO
+===================================== */
 
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+if (!prefersReducedMotion) {
+
+    /*
+       First show the hint.
+    */
+
+    setTimeout(() => {
+
+    showHint();
+
+    /* Keep hint visible for 30 seconds */
+    setTimeout(() => {
+
+        if (revealHint) {
+            revealHint.classList.remove("show");
+            revealHint.classList.add("hide");
+        }
+
+    }, 30000);
+
+}, 900);
+
+    /*
+       Demonstrate the interaction once.
+
+       Opens a small reveal over the mask,
+       then automatically closes.
+    */
+
+    setTimeout(() => {
+
+        if (hasInteracted) {
+            return;
+        }
+
+
+        /*
+           Approx centre of mask.
+        */
+
+        targetX = 50;
+        targetY = 55;
+
+        targetRadius =
+            window.innerWidth <= 700
+                ? 32
+                : 42;
+
+
+        startAnimation();
+
+
+        /*
+           Close demo again.
+        */
+
+        setTimeout(() => {
+
+            if (hasInteracted) {
+                return;
+            }
+
+
+            targetRadius = 0;
+
+            startAnimation();
+
+        }, 700);
+
+
+    }, 1300);
+
+} else {
+
+    /*
+       Still display instruction,
+       but no animated demo.
+    */
+
+    showHint();
+
+}
 }
 
 
