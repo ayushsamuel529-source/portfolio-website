@@ -25,41 +25,44 @@
     >
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
 </head>
 
 <body>
 
+   <body>
+
+    <!-- GLOBAL FIXED NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            HEYY, I'M ASH<span>.</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+            <a href="#about">ABOUT</a>
+            <a href="#work">WORK</a>
+            <a href="#contact">START A PROJECT</a>
+        </nav>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
     <main>
 
-        <!-- =========================
-             HERO / HOME
-        ========================== -->
         <section class="hero" id="home">
 
-            <header class="navbar">
-
-                <a href="#home" class="logo">
-                  HEYY, I'M ASH<span>.</span>
-                </a>
-
-                <nav class="desktop-nav" aria-label="Main navigation">
-                    <a href="#work">WORK</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#contact">START A PROJECT</a>
-                </nav>
-
-                <button
-                    class="menu-button"
-                    id="menuButton"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                >
-                    <span></span>
-                    <span></span>
-                </button>
-
-            </header>
-
+            <!-- WEB etc starts here -->
 
             <!-- Giant background typography -->
            <!-- WEB stays behind character -->
@@ -67,22 +70,65 @@
     <div class="web-word">WEB</div>
 </div>
 
-<!-- CHARACTER -->
-<div class="character-wrapper">
-    <picture>
-        <source
-            media="(max-width: 700px)"
-            srcset="phone-view.png"
-        >
+<!-- =========================================
+     INTERACTIVE MASK CHARACTER
+========================================== -->
 
-        <img
-            src="laptop-view.png"
-            alt="3D developer character"
-            class="character"
+<div
+    class="character-wrapper reveal-character"
+    id="revealCharacter"
+>
+
+    <div class="character-stack">
+
+        <!-- NORMAL / UNMASKED CHARACTER -->
+        <picture class="character-layer character-plain">
+            <source
+                media="(max-width: 700px)"
+                srcset="images/phone-view.png"
+            >
+
+            <img
+                src="laptop-view.png"
+                alt="Ash"
+                draggable="false"
+            >
+        </picture>
+
+
+        <!-- MASKED CHARACTER -->
+        <picture
+            class="character-layer character-masked"
+            id="maskedCharacter"
+            aria-hidden="true"
         >
-    </picture>
+            <source
+                media="(max-width: 700px)"
+                srcset="images/phone-mask.png"
+            >
+
+            <img
+                src="laptop-mask.png"
+                alt=""
+                draggable="false"
+            >
+        </picture>
+
+    </div>
+
+
+    <!-- Small interaction hint -->
+    <div class="reveal-hint" id="revealHint">
+        <span class="desktop-hint">
+            MOVE TO REVEAL
+        </span>
+
+        <span class="touch-hint">
+            TOUCH TO REVEAL
+        </span>
+    </div>
+
 </div>
-
 <!-- DEVELOPER stays IN FRONT of character -->
 <div class="developer-word" aria-hidden="true">
     DEVELOPER
@@ -122,8 +168,268 @@
         <!-- Temporary anchors.
              Actual sections hum baad mein banayenge. -->
 
-        <div id="work"></div>
-        <div id="about"></div>
+        <!-- =========================================
+     WORK / MY CREATIONS
+========================================== -->
+
+<section class="work-section">
+
+    <!-- INTRO -->
+    <div class="work-intro" id="about">
+
+        <h2 class="work-intro-title">
+            Heyyy, I'm Ash.
+        </h2>
+
+        <div class="work-intro-grid">
+
+            <div class="work-copy">
+
+                <p>
+                    I design and build
+                    <span class="work-highlight">
+                        modern digital experiences
+                    </span>
+                    — from clean static websites and
+                    <span class="work-highlight">
+                        immersive video-based sites
+                    </span>
+                    to
+                    <span class="work-highlight">
+                        premium 3D experiences
+                    </span>
+                    and
+                    <span class="work-highlight">
+                        full web applications.
+                    </span>
+                    Explore some of my creations below.
+                </p>
+
+            </div>
+
+
+            <!-- YOUR PHOTO -->
+            <div class="ash-photo-wrap">
+
+                <div class="photo-topline">
+                    <span>ABOUT THE CREATOR</span>
+                    <span>ASH</span>
+                </div>
+
+                <div class="ash-photo">
+
+                    <img
+                        src="ash-profile.png"
+                        alt="Ash"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         PROJECT 01
+    ====================================== -->
+
+    <article class="work-project" id="work">
+
+        <div class="project-index">
+            01
+        </div>
+
+
+        <div class="project-main">
+
+            <div class="project-title-row">
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="work-url"
+                >
+                    WEBSITE URL
+                    <span>↗</span>
+                </a>
+
+
+                <p class="work-project-description">
+                    — DESCRIPTION WILL BE ADDED HERE
+                </p>
+
+            </div>
+
+
+            <!-- VIDEO ROW -->
+            <div class="project-video-row">
+
+                <!-- LAPTOP VIDEO -->
+                <div class="project-video laptop-video">
+
+                    <div class="video-meta">
+                        <span>DESKTOP VIEW</span>
+                        <span>01 / 02</span>
+                    </div>
+
+                    <div class="laptop-video-frame">
+
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source
+                                src="videos/project-1-laptop.mp4"
+                                type="video/mp4"
+                            >
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE VIDEO -->
+                <div class="project-video mobile-video">
+
+                    <div class="video-meta">
+                        <span>MOBILE VIEW</span>
+                        <span>02 / 02</span>
+                    </div>
+
+                    <div class="phone-video-frame">
+
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source
+                                src="videos/project-1-phone.mp4"
+                                type="video/mp4"
+                            >
+                        </video>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================
+         PROJECT 02
+    ====================================== -->
+
+    <article class="work-project">
+
+        <div class="project-index">
+            02
+        </div>
+
+
+        <div class="project-main">
+
+            <div class="project-title-row">
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="work-url"
+                >
+                    WEBSITE URL
+                    <span>↗</span>
+                </a>
+
+
+                <p class="work-project-description">
+                    — DESCRIPTION WILL BE ADDED HERE
+                </p>
+
+            </div>
+
+
+            <!-- VIDEO ROW -->
+            <div class="project-video-row">
+
+                <!-- LAPTOP VIDEO -->
+                <div class="project-video laptop-video">
+
+                    <div class="video-meta">
+                        <span>DESKTOP VIEW</span>
+                        <span>01 / 02</span>
+                    </div>
+
+                    <div class="laptop-video-frame">
+
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source
+                                src="videos/project-2-laptop.mp4"
+                                type="video/mp4"
+                            >
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE VIDEO -->
+                <div class="project-video mobile-video">
+
+                    <div class="video-meta">
+                        <span>MOBILE VIEW</span>
+                        <span>02 / 02</span>
+                    </div>
+
+                    <div class="phone-video-frame">
+
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        >
+                            <source
+                                src="videos/project-2-phone.mp4"
+                                type="video/mp4"
+                            >
+                        </video>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+        
         <div id="contact"></div>
 
     </main>
@@ -141,15 +447,29 @@
     </button>
 
     <nav>
-        <a href="#home">HOME</a>
-        <a href="#work">WORK</a>
         <a href="#about">ABOUT</a>
+        <a href="#work">WORK</a>
         <a href="#contact">START PROJECT</a>
+        <a href="#home">HOME</a>
     </nav>
-
 </div>
 
     <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

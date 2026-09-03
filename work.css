@@ -1,0 +1,770 @@
+/* ========================================
+   CUSTOM FONTS
+======================================== */
+
+@font-face {
+    font-family: "Carlo";
+    src: url("Carlo.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Le Major";
+    src: url("LeMajor-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+/* =========================================================
+   WORK / MY CREATIONS
+========================================================= */
+
+.work-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(100px, 9vw, 160px)
+        4vw
+        clamp(120px, 11vw, 190px);
+
+    overflow: hidden;
+
+    color: #f0eafb;
+
+    background:
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(111, 53, 180, 0.22),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 22% 58%,
+            rgba(73, 31, 122, 0.18),
+            transparent 30%
+        ),
+        #100b18;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.work-intro {
+    width: min(100%, 1500px);
+
+    margin: 0 auto;
+
+    padding-bottom: clamp(130px, 13vw, 210px);
+}
+
+
+.work-intro-title {
+    font-family: "Carlo", serif;
+
+    font-size: clamp(55px, 6.5vw, 110px);
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.035em;
+
+    color: #f0eafb;
+}
+
+
+.work-intro-grid {
+    width: min(1050px, 82%);
+
+    margin-top: clamp(55px, 6vw, 95px);
+    margin-left: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        clamp(220px, 20vw, 300px);
+
+    align-items: center;
+
+    gap: clamp(50px, 7vw, 105px);
+}
+
+
+.work-copy {
+    min-width: 0;
+}
+
+
+.work-copy p {
+    max-width: 720px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: clamp(18px, 1.55vw, 24px);
+    font-weight: 400;
+
+    line-height: 1.68;
+
+    color: rgba(240, 234, 251, 0.76);
+}
+
+
+.work-highlight {
+    font-family: "Le Major", serif;
+
+    font-size: 1.16em;
+    font-weight: 600;
+
+    line-height: inherit;
+
+    color: #d5a6ff;
+
+    text-shadow: 0 0 0.35px currentColor;
+}
+
+/* =========================================================
+   ASH PHOTO
+========================================================= */
+
+.ash-photo-wrap {
+    width: 100%;
+}
+
+
+.photo-topline {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    color: rgba(240, 234, 251, 0.45);
+}
+
+
+.ash-photo {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(240, 234, 251, 0.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(166, 100, 255, 0.18),
+            rgba(255, 255, 255, 0.025)
+        );
+}
+
+
+.ash-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================================
+   PROJECT
+========================================================= */
+
+.work-project {
+    width: min(100%, 1500px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        clamp(65px, 7vw, 115px)
+        minmax(0, 1fr);
+
+    gap: clamp(35px, 5vw, 85px);
+
+    padding:
+        clamp(100px, 10vw, 160px)
+        0;
+
+    border-top: 1px solid rgba(240, 234, 251, 0.14);
+}
+
+
+.project-index {
+    font-family: "Carlo", serif;
+
+    font-size: clamp(48px, 5vw, 82px);
+
+    line-height: 1;
+
+    color: rgba(240, 234, 251, 0.30);
+}
+
+
+.project-main {
+    min-width: 0;
+}
+
+
+/* URL + DESCRIPTION */
+
+.project-title-row {
+    display: grid;
+
+    grid-template-columns:
+        max-content
+        minmax(280px, 620px);
+
+    align-items: start;
+
+    column-gap: 22px;
+
+    margin-bottom: clamp(45px, 5vw, 70px);
+}
+
+.work-url {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(27px, 3vw, 46px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: #f0eafb;
+
+    transition: color 0.2s ease;
+}
+
+
+.work-url span {
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.55em;
+
+    color: #be82ff;
+}
+
+
+.work-url:hover {
+    color: #c692ff;
+}
+
+
+
+.work-project-description {
+    max-width: 620px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: clamp(13px, 1.05vw, 16px);
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    letter-spacing: 0.1px;
+
+    color: rgba(240, 234, 251, 0.68);
+}
+
+/* =========================================================
+   VIDEO ROW — DESKTOP / LARGE LAPTOP
+========================================================= */
+
+.project-video-row {
+    width: min(100%,1080px);
+
+    display: grid;
+
+    /*
+       Laptop recording gets most of the width.
+       Phone recording stays narrow.
+    */
+
+    grid-template-columns:
+        minmax(0, 3.1fr)
+        minmax(180px, 0.8fr);
+
+    gap: clamp(20px, 2vw, 32px);
+
+    align-items: stretch;
+}
+
+
+.project-video {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.video-meta {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    color: rgba(240, 234, 251, 0.44);
+}
+
+
+/* DESKTOP RECORDING */
+
+.laptop-video-frame {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #09070d;
+
+    border: 1px solid rgba(240, 234, 251, 0.12);
+}
+
+
+.laptop-video-frame video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* PHONE RECORDING */
+
+.mobile-video {
+    height: 100%;
+}
+
+
+.phone-video-frame {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #09070d;
+
+    border: 1px solid rgba(240, 234, 251, 0.12);
+}
+
+
+.phone-video-frame video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #09070d;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP / TV
+   1600px+
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .work-section {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+
+    .work-intro,
+    .work-project {
+        max-width: 1650px;
+    }
+
+
+    .work-intro-grid {
+        max-width: 1180px;
+    }
+
+
+    .ash-photo {
+        max-height: 390px;
+    }
+
+
+    .project-video-row {
+        grid-template-columns:
+            minmax(0, 3.3fr)
+            minmax(210px, 0.8fr);
+
+        gap: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   NORMAL DESKTOP / LAPTOP
+   1101px — 1599px
+========================================================= */
+
+@media (min-width: 1101px) and (max-width: 1599px) {
+
+    .work-intro-grid {
+        width: 84%;
+    }
+
+
+    .ash-photo-wrap {
+        width: clamp(220px, 19vw, 285px);
+    }
+
+
+    .project-video-row {
+        grid-template-columns:
+            minmax(0, 3fr)
+            minmax(170px, 0.82fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   701px — 1100px
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+    .work-section {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+
+    .work-intro-grid {
+        width: 94%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            clamp(180px, 23vw, 230px);
+
+        gap: 35px;
+    }
+
+
+    .work-copy p {
+        font-size: clamp(16px, 2vw, 20px);
+    }
+
+
+    .ash-photo {
+        aspect-ratio: 4 / 5;
+    }
+
+
+    .work-project {
+        grid-template-columns:
+            60px
+            minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+
+    /*
+       Tablet par bhi side-by-side.
+       Phone preview slightly narrower.
+    */
+
+    .project-video-row {
+        grid-template-columns:
+            minmax(0, 2.65fr)
+            minmax(135px, 0.75fr);
+
+        gap: 18px;
+    }
+
+
+    .work-url {
+        font-size: clamp(25px, 3.7vw, 38px);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / PHONE
+   <= 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .work-section {
+        padding:
+            85px
+            18px
+            110px;
+    }
+
+
+    /* INTRO */
+
+    .work-intro {
+        padding-bottom: 110px;
+    }
+
+
+    .work-intro-title {
+        font-size: clamp(52px, 17vw, 76px);
+
+        line-height: 0.94;
+    }
+
+
+    .work-intro-grid {
+        width: 100%;
+
+        margin-top: 45px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 42px;
+    }
+
+
+    .work-copy p {
+        width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+
+    .work-highlight {
+        font-size: 1.13em;
+    }
+
+
+    /*
+       Portrait intentionally isn't full-width.
+       It remains an editorial supporting image.
+    */
+
+    .ash-photo-wrap {
+        width: min(68vw, 260px);
+
+        align-self: flex-end;
+    }
+
+
+    .ash-photo {
+        aspect-ratio: 4 / 5;
+    }
+
+
+    /* PROJECT */
+
+    .work-project {
+        display: block;
+
+        padding: 90px 0;
+    }
+
+
+    .project-index {
+        margin-bottom: 32px;
+
+        font-size: 44px;
+    }
+
+
+    .project-title-row {
+        display: block;
+
+        margin-bottom: 38px;
+    }
+
+
+    .work-url {
+        font-size: clamp(27px, 9vw, 40px);
+    }
+
+.work-project-description {
+    max-width: 100%;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+    /*
+       IMPORTANT:
+       On phones the two videos stack.
+       Keeping them side-by-side on 320–430px
+       screens would make the website unreadable.
+    */
+
+    .project-video-row {
+        display: flex;
+        flex-direction: column;
+
+        gap: 42px;
+    }
+
+
+    /* 16:9 mobile width laptop recording */
+
+    .laptop-video-frame {
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+    }
+
+
+    /*
+       Actual phone recording retains a
+       portrait container and doesn't fill
+       the entire screen width.
+    */
+
+    .mobile-video {
+        width: min(58vw, 220px);
+
+        align-self: center;
+    }
+
+
+    .phone-video-frame {
+        width: 100%;
+
+        aspect-ratio: 9 / 16;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 420px
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .work-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .work-intro-title {
+        font-size: clamp(48px, 16vw, 65px);
+    }
+
+
+    .work-copy p {
+        font-size: 15px;
+    }
+
+
+    .ash-photo-wrap {
+        width: min(72vw, 235px);
+    }
+
+
+    .work-project {
+        padding: 80px 0;
+    }
+
+
+    .mobile-video {
+        width: min(62vw, 205px);
+    }
+
+}
+
+
+/* =========================================================
+   VERY NARROW PHONE
+   <= 340px
+========================================================= */
+
+@media (max-width: 340px) {
+
+    .work-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .work-intro-title {
+        font-size: 46px;
+    }
+
+
+    .work-copy p {
+        font-size: 14px;
+    }
+
+
+    .ash-photo-wrap {
+        width: 75vw;
+    }
+
+
+    .work-url {
+        font-size: 26px;
+    }
+
+
+    .mobile-video {
+        width: 65vw;
+    }
+
+}
