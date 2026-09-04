@@ -1,0 +1,799 @@
+/* ========================================
+   START A PROJECT
+======================================== */
+
+.contact-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(110px, 11vw, 190px)
+        4vw
+        clamp(120px, 12vw, 200px);
+
+    overflow: hidden;
+
+    color: #f0eafb;
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(118, 61, 186, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 18% 70%,
+            rgba(73, 31, 122, 0.16),
+            transparent 34%
+        ),
+        #100b18;
+}
+
+
+/* subtle glow */
+
+.contact-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -180px;
+    top: 10%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(135, 72, 219, 0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+.contact-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 1450px);
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.contact-header {
+    border-top:
+        1px solid rgba(240, 234, 251, 0.14);
+
+    padding-top: 35px;
+}
+
+
+.contact-eyebrow {
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #bd82ff;
+}
+
+
+.contact-header h2 {
+    font-family: "Anton", sans-serif;
+
+    font-size:
+        clamp(80px, 11vw, 180px);
+
+    font-weight: 400;
+
+    line-height: 0.85;
+
+    letter-spacing: -0.035em;
+
+    text-transform: uppercase;
+
+    color: #f0eafb;
+}
+
+
+.contact-header h2 span {
+    color: #a76cff;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.contact-intro {
+    width: min(520px, 45%);
+
+    margin:
+        clamp(55px, 7vw, 100px)
+        5%
+        clamp(70px, 8vw, 120px)
+        auto;
+}
+
+
+.contact-intro p {
+    font-family: "Inter", sans-serif;
+
+    font-size:
+        clamp(16px, 1.4vw, 21px);
+
+    line-height: 1.65;
+
+    color:
+        rgba(240, 234, 251, 0.68);
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.project-form {
+    width: min(1100px, 88%);
+
+    margin-left: auto;
+}
+
+
+.form-field {
+    display: grid;
+
+    grid-template-columns:
+        65px
+        minmax(0, 1fr);
+
+    gap: clamp(18px, 3vw, 45px);
+
+    padding:
+        clamp(35px, 4vw, 55px)
+        0;
+
+    border-top:
+        1px solid rgba(240, 234, 251, 0.14);
+}
+
+
+.form-field:last-of-type {
+    border-bottom:
+        1px solid rgba(240, 234, 251, 0.14);
+}
+
+
+.field-number {
+    padding-top: 8px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+
+    color:
+        rgba(240, 234, 251, 0.30);
+}
+
+
+.field-content {
+    min-width: 0;
+}
+
+
+.field-content label {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size:
+        clamp(18px, 1.7vw, 25px);
+
+    font-weight: 500;
+
+    color: #f0eafb;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.field-content input,
+.field-content textarea,
+.field-content select {
+    width: 100%;
+
+    padding:
+        12px
+        0
+        13px;
+
+    border: 0;
+
+    border-bottom:
+        1px solid rgba(240, 234, 251, 0.22);
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    font-family: "Inter", sans-serif;
+
+    font-size:
+        clamp(15px, 1.3vw, 18px);
+
+    font-weight: 400;
+
+    color: #f0eafb;
+
+    transition:
+        border-color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+
+.field-content textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+
+.field-content input::placeholder,
+.field-content textarea::placeholder {
+    color:
+        rgba(240, 234, 251, 0.30);
+}
+
+
+.field-content input:focus,
+.field-content textarea:focus,
+.field-content select:focus {
+    border-color: #b77aff;
+
+    padding-left: 7px;
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+.select-wrap {
+    position: relative;
+}
+
+
+.field-content select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    padding-right: 45px;
+
+    cursor: pointer;
+}
+
+
+.field-content select option {
+    color: #f0eafb;
+
+    background: #171020;
+}
+
+
+.select-arrow {
+    position: absolute;
+
+    right: 4px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #b77aff;
+
+    pointer-events: none;
+
+    transition: transform 0.25s ease;
+}
+
+
+.select-wrap:focus-within
+.select-arrow {
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+
+/* ========================================
+   SUBMIT
+======================================== */
+
+.form-submit {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-top:
+        clamp(45px, 6vw, 80px);
+}
+
+
+.submit-project {
+    position: relative;
+
+    width:
+        clamp(180px, 17vw, 230px);
+
+    height:
+        clamp(180px, 17vw, 230px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    border: 1px solid
+        rgba(240, 234, 251, 0.25);
+
+    border-radius: 50%;
+
+    background: #9e5cec;
+
+    color: #100b18;
+
+    font-family: "Anton", sans-serif;
+
+    font-size:
+        clamp(18px, 1.7vw, 25px);
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.45s cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+
+.submit-project:hover {
+    transform:
+        scale(1.06)
+        rotate(-2deg);
+
+    background: #f0eafb;
+
+    color: #100b18;
+}
+
+
+.submit-arrow {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.9em;
+}
+
+
+/* ========================================
+   SUCCESS
+======================================== */
+
+.success-message {
+    display: none;
+
+    width: min(650px, 100%);
+
+    margin:
+        55px 0
+        0 auto;
+
+    padding:
+        clamp(22px, 3vw, 32px);
+
+    grid-template-columns:
+        45px
+        minmax(0, 1fr);
+
+    gap: 20px;
+
+    border:
+        1px solid rgba(
+            183,
+            122,
+            255,
+            0.34
+        );
+
+    background:
+        rgba(167, 108, 255, 0.09);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 16px;
+
+    opacity: 0;
+
+    transform:
+        translateY(15px)
+        scale(0.98);
+}
+
+
+.success-message.show {
+    display: grid;
+
+    animation:
+        success-in
+        0.65s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+}
+
+
+.success-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #a76cff;
+
+    color: #100b18;
+
+    font-weight: 800;
+}
+
+
+.success-message strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 0.5px;
+
+    color: #f0eafb;
+}
+
+
+.success-message p {
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color:
+        rgba(240, 234, 251, 0.66);
+}
+
+
+@keyframes success-in {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal-on-scroll {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s
+            cubic-bezier(
+                0.16,
+                1,
+                0.3,
+                1
+            ),
+        transform 0.8s
+            cubic-bezier(
+                0.16,
+                1,
+                0.3,
+                1
+            );
+}
+
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* little stagger */
+
+.form-field:nth-child(2) {
+    transition-delay: 0.06s;
+}
+
+.form-field:nth-child(3) {
+    transition-delay: 0.12s;
+}
+
+.form-field:nth-child(4) {
+    transition-delay: 0.18s;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+    .contact-intro {
+        width: min(600px, 75%);
+
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+
+    .project-form {
+        width: 94%;
+    }
+
+
+    .form-field {
+        grid-template-columns:
+            45px
+            minmax(0, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .contact-section {
+        padding:
+            90px
+            18px
+            110px;
+    }
+
+
+    .contact-header {
+        padding-top: 25px;
+    }
+
+
+    .contact-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 8px;
+    }
+
+
+    .contact-header h2 {
+        font-size:
+            clamp(65px, 20vw, 90px);
+
+        line-height: 0.88;
+    }
+
+
+    .contact-intro {
+        width: 100%;
+
+        margin:
+            45px 0
+            70px;
+    }
+
+
+    .contact-intro p {
+        max-width: 34ch;
+
+        font-size: 15px;
+    }
+
+
+    .project-form {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    .form-field {
+        grid-template-columns:
+            30px
+            minmax(0, 1fr);
+
+        gap: 12px;
+
+        padding:
+            32px 0;
+    }
+
+
+    .field-number {
+        font-size: 8px;
+    }
+
+
+    .field-content label {
+        margin-bottom: 17px;
+
+        font-size: 17px;
+    }
+
+
+    .field-content input,
+    .field-content textarea,
+    .field-content select {
+        font-size: 16px;
+    }
+
+
+    .field-content textarea {
+        min-height: 110px;
+    }
+
+
+    .form-submit {
+        justify-content: center;
+
+        padding-top: 55px;
+    }
+
+
+    .submit-project {
+        width: 170px;
+        height: 170px;
+
+        font-size: 18px;
+    }
+
+
+    .success-message {
+        margin-top: 40px;
+
+        grid-template-columns:
+            38px
+            1fr;
+
+        gap: 14px;
+    }
+
+
+    .success-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL PHONE
+======================================== */
+
+@media (max-width: 420px) {
+
+    .contact-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .contact-header h2 {
+        font-size:
+            clamp(58px, 19vw, 78px);
+    }
+
+
+    .form-field {
+        grid-template-columns:
+            25px
+            minmax(0, 1fr);
+    }
+
+
+    .submit-project {
+        width: 155px;
+        height: 155px;
+
+        font-size: 17px;
+    }
+
+}
+/* ========================================
+   FORM STATES
+======================================== */
+
+.submit-project:disabled {
+    cursor: wait;
+
+    opacity: 0.72;
+
+    transform: scale(0.97);
+}
+
+
+.success-message.error {
+    border-color:
+        rgba(255, 110, 140, 0.35);
+
+    background:
+        rgba(170, 35, 70, 0.10);
+}
+
+
+.success-message.error
+.success-icon {
+    background: #b94a68;
+
+    color: #fff;
+}
