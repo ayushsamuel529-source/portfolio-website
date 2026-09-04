@@ -797,3 +797,47 @@
 
     color: #fff;
 }
+/* =========================================
+   COUNTRY PHONE INPUT
+========================================= */
+
+.phone-input-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(240, 234, 251, 0.22);
+}
+
+.phone-code {
+    flex: 0 0 auto;
+    padding: 14px 18px 14px 0;
+
+    color: #b77aff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+
+    border-right: 1px solid rgba(240, 234, 251, 0.18);
+}
+
+.phone-input-wrap input {
+    flex: 1;
+    min-width: 0;
+
+    padding-left: 18px;
+
+    border-bottom: 0;
+}
+
+@media (max-width: 700px) {
+
+    .phone-code {
+        padding-right: 12px;
+        font-size: 15px;
+    }
+
+    .phone-input-wrap input {
+        padding-left: 12px;
+    }
+}
