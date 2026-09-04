@@ -280,6 +280,39 @@
     max-width: 620px;
 
     font-family: "Inter", sans-serif;
+}
+
+
+/* CLICK INSTRUCTION */
+
+.project-click-hint {
+    margin: 0 0 9px;
+
+    font-size: clamp(10px, 0.8vw, 12px);
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.9px;
+
+    color: rgba(240, 234, 251, 0.58);
+}
+
+
+.project-click-hint span {
+    color: #b77aff;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 14px rgba(183, 122, 255, 0.25);
+}
+
+
+/* PROJECT DESCRIPTION */
+
+.project-description-text {
+    margin: 0;
 
     font-size: clamp(13px, 1.05vw, 16px);
     font-weight: 400;
@@ -290,7 +323,6 @@
 
     color: rgba(240, 234, 251, 0.68);
 }
-
 /* =========================================================
    VIDEO ROW — DESKTOP / LARGE LAPTOP
 ========================================================= */
@@ -356,16 +388,17 @@
     border: 1px solid rgba(240, 234, 251, 0.12);
 }
 
-
 .laptop-video-frame video {
     display: block;
 
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
-}
+    object-fit: contain;
+    object-position: center;
 
+    background: #09070d;
+}
 
 /* PHONE RECORDING */
 

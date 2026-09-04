@@ -1,0 +1,138 @@
+/* =========================================
+   ABOUT — ANIMATE ONLY WHEN ENTERING
+   FROM ABOVE
+========================================= */
+
+const aboutSection =
+    document.getElementById("about");
+
+
+if (aboutSection) {
+
+    aboutSection.classList.add(
+        "about-motion-ready"
+    );
+
+
+    let lastScrollY =
+        window.scrollY;
+
+    let scrollingDown =
+        true;
+
+    let wasInsideAbout =
+        false;
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const currentScrollY =
+                window.scrollY;
+
+            scrollingDown =
+                currentScrollY > lastScrollY;
+
+            lastScrollY =
+                currentScrollY;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    const aboutObserver =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        /*
+                           Play ONLY while moving
+                           downward into About.
+                        */
+
+                        if (
+                            scrollingDown &&
+                            !wasInsideAbout
+                        ) {
+
+                            aboutSection.classList.remove(
+                                "about-animate"
+                            );
+
+
+                            /*
+                               Force browser to register
+                               initial animation state.
+                            */
+
+                            void aboutSection.offsetWidth;
+
+
+                            aboutSection.classList.add(
+                                "about-animate"
+                            );
+
+                        }
+
+
+                        wasInsideAbout = true;
+
+                    } else {
+
+                        /*
+                           Once About fully leaves the
+                           observed area, it can be
+                           triggered again later.
+                        */
+
+                        wasInsideAbout = false;
+
+
+                        /*
+                           Reset only if user has gone
+                           ABOVE the About section.
+
+                           This means scrolling upward
+                           from Project 01 won't replay it.
+                        */
+
+                        const rect =
+                            aboutSection.getBoundingClientRect();
+
+                        if (
+                            rect.top >
+                            window.innerHeight * 0.45
+                        ) {
+
+                            aboutSection.classList.remove(
+                                "about-animate"
+                            );
+
+                        }
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.18,
+
+                rootMargin:
+                    "0px 0px -15% 0px"
+            }
+        );
+
+
+    aboutObserver.observe(
+        aboutSection
+    );
+
+}

@@ -426,3 +426,269 @@ if (
         }
     });
 }
+/* =========================================
+   SEARCHABLE COUNTRY PICKER
+========================================= */
+
+const countrySearch =
+    document.getElementById("countrySearch");
+
+const countryResults =
+    document.getElementById("countryResults");
+
+
+if (
+    countrySearch &&
+    countryResults &&
+    countrySelect
+) {
+
+    /*
+       Existing <select> options are our
+       single source of truth.
+    */
+
+    const countries =
+        Array.from(countrySelect.options)
+            .filter(option => option.value)
+            .map(option => ({
+                name: option.value,
+                code: option.dataset.code || ""
+            }));
+
+
+    function renderCountryResults(query = "") {
+
+        const search =
+            query.trim().toLowerCase();
+
+
+        const matches =
+            countries.filter(country => {
+
+                return (
+                    country.name
+                        .toLowerCase()
+                        .includes(search) ||
+
+                    country.code
+                        .toLowerCase()
+                        .includes(search)
+                );
+
+            });
+
+
+        countryResults.innerHTML = "";
+
+
+        if (matches.length === 0) {
+
+            countryResults.innerHTML = `
+                <div class="country-no-result">
+                    No country found
+                </div>
+            `;
+
+            countryResults.classList.add(
+                "show"
+            );
+
+            return;
+        }
+
+
+        /*
+           Don't dump all 195 items into
+           the visible panel at once.
+        */
+
+        matches
+            .slice(0, 12)
+            .forEach(country => {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.type = "button";
+
+                button.className =
+                    "country-result";
+
+
+                const countryName =
+                    document.createElement(
+                        "span"
+                    );
+
+                countryName.textContent =
+                    country.name;
+
+
+                const countryCode =
+                    document.createElement(
+                        "span"
+                    );
+
+                countryCode.className =
+                    "country-result-code";
+
+                countryCode.textContent =
+                    country.code;
+
+
+                button.append(
+                    countryName,
+                    countryCode
+                );
+
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        /*
+                           Update the REAL select.
+                        */
+
+                        countrySelect.value =
+                            country.name;
+
+
+                        /*
+                           Trigger your existing:
+                           country code + phone logic.
+                        */
+
+                        countrySelect.dispatchEvent(
+                            new Event(
+                                "change",
+                                {
+                                    bubbles: true
+                                }
+                            )
+                        );
+
+
+                        /*
+                           Show selection in search.
+                        */
+
+                        countrySearch.value =
+                            country.name;
+
+
+                        countryResults.classList.remove(
+                            "show"
+                        );
+
+
+                        /*
+                           Convenient next step:
+                           phone field gets focus.
+                        */
+
+                        if (clientPhone) {
+                            clientPhone.focus();
+                        }
+
+                    }
+                );
+
+
+                countryResults.appendChild(
+                    button
+                );
+
+            });
+
+
+        countryResults.classList.add(
+            "show"
+        );
+
+    }
+
+
+    /*
+       Search while typing.
+    */
+
+    countrySearch.addEventListener(
+        "input",
+        () => {
+
+            renderCountryResults(
+                countrySearch.value
+            );
+
+        }
+    );
+
+
+    /*
+       When user taps search on mobile,
+       show countries immediately.
+    */
+
+    countrySearch.addEventListener(
+        "focus",
+        () => {
+
+            renderCountryResults(
+                countrySearch.value
+            );
+
+        }
+    );
+
+
+    /*
+       Close when clicking elsewhere.
+    */
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                !event.target.closest(
+                    ".country-search-wrap"
+                )
+            ) {
+
+                countryResults.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    /*
+       ESC closes results on desktop.
+    */
+
+    countrySearch.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key === "Escape") {
+
+                countryResults.classList.remove(
+                    "show"
+                );
+
+                countrySearch.blur();
+
+            }
+
+        }
+    );
+
+}

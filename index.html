@@ -27,12 +27,42 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="work.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="loader.css">
 </head>
 
 
 
    <body>
+<body>
 
+    <!-- =========================================
+         CINEMATIC PORTFOLIO LOADER
+    ========================================== -->
+    <div
+        class="site-loader"
+        id="siteLoader"
+        aria-hidden="true"
+    >
+        <div class="loader-panel loader-panel-left"></div>
+        <div class="loader-panel loader-panel-right"></div>
+
+        <div class="loader-center">
+            <span class="loader-kicker">
+                ASH / WEB DEVELOPER
+            </span>
+
+            <div class="loader-title">
+                PORTFOLIO
+            </div>
+
+            <div class="loader-line">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GLOBAL FIXED NAVBAR -->
     <!-- GLOBAL FIXED NAVBAR -->
     <header class="navbar">
 
@@ -259,19 +289,30 @@
             <div class="project-title-row">
 
                 <a
-                    href="#"
+                    href="https://ayushsamuel529-source.github.io/hotel-skyline/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="work-url"
                 >
-                    WEBSITE URL
+                    HOTEL SKYLINE
                     <span>↗</span>
                 </a>
 
+<div class="work-project-description">
 
-                <p class="work-project-description">
-                    — DESCRIPTION WILL BE ADDED HERE
-                </p>
+    <p class="project-click-hint">
+        CLICK ON
+        <span>HOTEL SKYLINE</span>
+        TO VISIT THE SITE ↗
+    </p>
+
+    <p class="project-description-text">
+        An immersive showcase for a 7-star luxury hotel,
+        featuring elegant design and three exclusive stays
+        crafted around a premium hospitality experience.
+    </p>
+
+</div>
 
             </div>
 
@@ -358,20 +399,31 @@
             <div class="project-title-row">
 
                 <a
-                    href="#"
+                    href="https://ayushsamuel529-source.github.io/the-golden-spoon-/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="work-url"
                 >
-                    WEBSITE URL
+                    THE GOLDEN SPOON
                     <span>↗</span>
                 </a>
 
 
-                <p class="work-project-description">
-                    — DESCRIPTION WILL BE ADDED HERE
-                </p>
+                <div class="work-project-description">
 
+    <p class="project-click-hint">
+        CLICK ON
+        <span>THE GOLDEN SPOON</span>
+        TO VISIT THE SITE ↗
+    </p>
+
+    <p class="project-description-text">
+        A warm, premium digital experience for The Golden Spoon,
+        blending a luxurious traditional atmosphere with elegant
+        dining spaces crafted for memorable family experiences.
+    </p>
+
+</div>
             </div>
 
 
@@ -396,7 +448,7 @@
                             preload="metadata"
                         >
                             <source
-                                src="videos/project-2-laptop.mp4"
+                                src="project-2-laptop.mp4"
                                 type="video/mp4"
                             >
                         </video>
@@ -424,7 +476,7 @@
                             preload="metadata"
                         >
                             <source
-                                src="videos/project-2-phone.mp4"
+                                src="project-2-phone.mp4"
                                 type="video/mp4"
                             >
                         </video>
@@ -569,7 +621,24 @@
         <label for="clientCountry">
             Which country are you from?
         </label>
+            <div class="country-search-wrap">
 
+    <input
+        type="search"
+        id="countrySearch"
+        class="country-search"
+        placeholder="Search country..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Search country"
+    >
+
+    <div
+        class="country-results"
+        id="countryResults"
+    ></div>
+
+</div>
         <div class="select-wrap">
 
       
@@ -1001,7 +1070,10 @@
 </div>
 
     <script src="script.js"></script>
+    <script src="work.js"></script>
     <script src="contact.js"></script>
+    <script src="loader.js"></script>
+
 
 
 
